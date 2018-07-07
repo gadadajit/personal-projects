@@ -1,9 +1,0 @@
-package com.gojek.parkinglotmgmtservices.services;
-
-public interface ParkingLotService {
-	
-	public void createParkingLot();
-	
-	public void entry(String reg_no);
-
-}
