@@ -1,8 +1,6 @@
 package com.gojek.parkinglotmgmtservices.servicesimpl;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 
 import com.gojek.parkinglotmgmtservices.pojos.Car;
@@ -36,7 +34,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 			}
 			Map<String,HashSet<String>> colour_map = data.getColour_reg_no_map();
 			if(colour_map.containsKey(car.getColour())) {
-				HashSet<String> reg_nos = (HashSet<String>) colour_map.get(reg_no);
+				HashSet<String> reg_nos = (HashSet<String>) colour_map.get(car.getColour());
 				reg_nos.add(car.getRegistration_no());
 				colour_map.put(car.getColour(),reg_nos);
 				data.setColour_reg_no_map(colour_map);
@@ -48,7 +46,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 			}
 			Map<String,HashSet<Integer>> colour_slots_map = data.getColour_slots_map();
 			if(colour_slots_map.containsKey(car.getColour())) {
-				HashSet<Integer> slots = (HashSet<Integer>) colour_slots_map.get(reg_no);
+				HashSet<Integer> slots = (HashSet<Integer>) colour_slots_map.get(car.getColour());
 				slots.add(available_slot.getSlot_id());
 				colour_slots_map.put(car.getColour(),slots);
 				data.setColour_slots_map(colour_slots_map);
@@ -71,6 +69,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		for(ParkingSlot slot: slots) {
 			if(slot.isAvailable()) {
 				available_slot = slot;
+				break;
 			}
 		}
 		return available_slot;	
@@ -82,7 +81,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		ParkingSlot[] slots = data.getParking_slots();
 		System.out.println("Slot No.  Registration No  Colour");
 		for(ParkingSlot slot: slots) {
-			System.out.println(slot.getSlot_id()+" "+slot.getCar().getRegistration_no()+" "+slot.getCar().getColour());
+			if(slot.getCar() != null) {			
+				System.out.println(slot.getSlot_id()+" "+slot.getCar().getRegistration_no()+" "+slot.getCar().getColour());
+			}
 		}
 		
 	}
@@ -95,6 +96,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		slot.setIsAvailable(true);
 		slot.setCar(null);
 		data.setParking_slots(slots);
+		System.out.println("Slot number "+slot_no+" is free");
 	}
 
 	@Override
