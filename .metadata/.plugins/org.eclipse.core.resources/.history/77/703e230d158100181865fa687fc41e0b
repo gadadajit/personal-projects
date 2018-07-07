@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package com.gojek.parkinglotmgmtservices.pojos;
+
+/**
+ * @author ajitgadad
+ *
+ */
+public class ParkingLot {
+	private int slot_id;
+	private boolean is_available;
+}

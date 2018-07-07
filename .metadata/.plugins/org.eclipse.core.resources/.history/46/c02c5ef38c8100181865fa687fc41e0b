@@ -1,0 +1,31 @@
+package com.gojek.parkinglotmgmtservices.servicesimpl;
+
+import com.gojek.parkinglotmgmtservices.pojos.ParkingSlot;
+import com.gojek.parkinglotmgmtservices.services.ParkingLotService;
+
+public class ParkingLotServiceImpl implements ParkingLotService {
+
+	@Override
+	public void entry(String reg_no) {
+		
+		
+	}
+
+	@Override
+	public void displayCurrentStatus() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exit(int slot_no) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createParkingLot(int no_slots) {
+		ParkingSlot[] parking_slots = new ParkingSlot[no_slots];
+	}
+	
+}

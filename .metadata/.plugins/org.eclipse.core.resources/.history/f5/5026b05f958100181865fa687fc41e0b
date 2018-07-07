@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package com.gojek.parkinglotmgmtservices.pojos;
+
+/**
+ * @author ajitgadad
+ *
+ */
+public class ParkingData {
+	private static ParkingData instance = null;
+	private ParkingSlot[] parking_slots;
+
+	/**
+	 * @return the parking_slots
+	 */
+	public ParkingSlot[] getParking_slots() {
+		return parking_slots;
+	}
+
+	/**
+	 * @param parking_slots the parking_slots to set
+	 */
+	public void setParking_slots(ParkingSlot[] parking_slots) {
+		this.parking_slots = parking_slots;
+	}
+	
+	private ParkingData() {}
+	
+	public static ParkingData getInstance() {
+		if() {
+			
+		}
+		return null;
+		
+	}
+
+}
