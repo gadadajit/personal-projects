@@ -27,7 +27,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		}
 		
 	}
-
+	//This method is used to store car's data
 	private void saveParkingData(String reg_no, ParkingData data, ParkingSlot available_slot, Car car) {
 		Map<String,HashSet<Integer>> reg_no_map = data.getReg_no_slots_map();
 		if(reg_no_map.containsKey(car.getRegistration_no())) {
@@ -67,6 +67,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 		}
 	}
 	
+	//This method is used to find the available parking slot
 	private ParkingSlot getNearestAvlSlot(ParkingData data) {
 		ParkingSlot[] slots = data.getParking_slots();
 		ParkingSlot available_slot = null;;

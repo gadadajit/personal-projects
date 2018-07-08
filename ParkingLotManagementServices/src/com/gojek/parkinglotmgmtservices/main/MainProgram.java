@@ -36,7 +36,6 @@ public class MainProgram {
 			while(!exit_flag) {
 				if (args.length == 0) {
 					bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-					//bufferedReader = new BufferedReader(new FileReader("/Users/ajitgadad/Documents/Java_workspace/personal_projects/parking_lot/solution/ParkingLotManagementServices/src/com/gojek/parkinglotmgmtservices/main/data.txt"));
 				}
 				String command = null;
 				if((command = bufferedReader.readLine()) == null) {
@@ -45,7 +44,6 @@ public class MainProgram {
 				if(command != null && !command.isEmpty()) {
 					String[] command_arr = command.split("\\s+");
 					if(!command_arr[0].isEmpty()) {	
-						//String input = command_arr[0];
 						exit_flag = callService(exit_flag, service, data_provider, command_arr);
 					}
 				}
@@ -57,7 +55,8 @@ public class MainProgram {
 			System.out.println("Input error is found");
 		}
 	}
-
+	
+	//This method is used to call respective service methods based on input command
 	private static boolean callService(boolean exit_flag, ParkingLotServiceImpl service,
 			ParkingDataProviderImpl data_provider, String[] command_arr) {
 		switch(command_arr[0]) {

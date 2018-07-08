@@ -9,7 +9,7 @@ Assmptions made:
 How data is stored:
 - Using an instance of Singleton class 
 
-Scope of data availibity:
+Parking data availibity:
 - Till application restarts.
 
 Dependcency:
