@@ -37,7 +37,7 @@ public class MainProgram {
 					bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 				}
 				String command = bufferedReader.readLine().trim();
-				if(!command.isEmpty()) {
+				if(command != null && !command.isEmpty()) {
 					String[] command_arr = command.split("\\s+");
 					if(!command_arr[0].isEmpty()) {	
 						String input = command_arr[0];
@@ -84,9 +84,9 @@ public class MainProgram {
 			
 			}	
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
