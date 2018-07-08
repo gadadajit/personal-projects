@@ -83,10 +83,10 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 	public void displayCurrentStatus() {
 		ParkingData data = ParkingData.getInstance();
 		ParkingSlot[] slots = data.getParking_slots();
-		System.out.println("Slot No.  Registration No  Colour");
+		System.out.println("Slot No.    Registration No    Colour");
 		for(ParkingSlot slot: slots) {
 			if(slot.getCar() != null) {			
-				System.out.println(slot.getSlot_id()+" "+slot.getCar().getRegistration_no()+" "+slot.getCar().getColour());
+				System.out.println(slot.getSlot_id()+"           "+slot.getCar().getRegistration_no()+"      "+slot.getCar().getColour());
 			}
 		}
 		

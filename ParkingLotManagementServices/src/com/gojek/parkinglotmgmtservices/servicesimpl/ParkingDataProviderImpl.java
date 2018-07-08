@@ -21,8 +21,15 @@ public class ParkingDataProviderImpl implements ParkingDataProvider {
 		HashMap<String, HashSet<Integer>> map = (HashMap<String, HashSet<Integer>>) data.getColour_slots_map();
 		if(map.containsKey(colour)) {
 			HashSet<Integer> slot_nos = map.get(colour);
+			int i=0;
 			for(int slot_no:slot_nos) {
-				System.out.print(slot_no+" ");		
+				if(i == (slot_nos.size()-1)) {
+					System.out.print(slot_no);
+				}else {
+					System.out.print(slot_no+", ");
+					i=i+1;
+				}
+						
 			}
 			System.out.println();
 		}else {
@@ -36,8 +43,15 @@ public class ParkingDataProviderImpl implements ParkingDataProvider {
 		HashMap<String, HashSet<Integer>> map = (HashMap<String, HashSet<Integer>>) data.getReg_no_slots_map();
 		if(map.containsKey(reg_no)) {	
 			HashSet<Integer> slot_nos = map.get(reg_no);
+			int i=0;
 			for(int slot_no:slot_nos) {
-				System.out.print(slot_no+" ");		
+				if(i == (slot_nos.size()-1)) {
+					System.out.print(slot_no);
+				}else {
+					System.out.print(slot_no+", ");
+					i=i+1;
+				}
+						
 			}
 			System.out.println();
 		}else {
@@ -51,8 +65,15 @@ public class ParkingDataProviderImpl implements ParkingDataProvider {
 		HashMap<String, HashSet<String>> map = (HashMap<String, HashSet<String>>) data.getColour_reg_no_map();
 		if(map.containsKey(colour)) {	
 			HashSet<String> reg_nos = map.get(colour);
+			int i=0;
 			for(String reg_no:reg_nos) {
-				System.out.print(reg_no+" ");		
+				if(i == (reg_nos.size()-1)) {
+					System.out.print(reg_no);
+				}else {
+					System.out.print(reg_no+", ");
+					i=i+1;
+				}
+						
 			}
 			System.out.println();
 		}else {
