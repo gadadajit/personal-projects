@@ -4,6 +4,7 @@
 package com.gojek.parkinglotmgmtservices.main;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,8 +36,12 @@ public class MainProgram {
 			while(!exit_flag) {
 				if (args.length == 0) {
 					bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+					//bufferedReader = new BufferedReader(new FileReader("/Users/ajitgadad/Documents/Java_workspace/personal_projects/parking_lot/solution/ParkingLotManagementServices/src/com/gojek/parkinglotmgmtservices/main/data.txt"));
 				}
-				String command = bufferedReader.readLine().trim();
+				String command = null;
+				if((command = bufferedReader.readLine()) == null) {
+					break;
+				}
 				if(command != null && !command.isEmpty()) {
 					String[] command_arr = command.split("\\s+");
 					if(!command_arr[0].isEmpty()) {	
