@@ -25,8 +25,10 @@
 						<mainClass>com.gojek.parkinglotmgmtservices.main.MainProgram</mainClass>
 					</manifest>
 				</archive>
+				<outputDirectory>bin</outputDirectory>
 			</configuration>
 		</plugin>
+		
     </plugins>
   </build>
   <dependencies>
